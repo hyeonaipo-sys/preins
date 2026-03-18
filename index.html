@@ -15,8 +15,8 @@
   --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --grad:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
-body{background:var(--bg);font-family:var(--font);color:var(--text);display:flex;flex-direction:column;align-items:center;min-height:100vh;}
-.app{width:100%;max-width:470px;min-height:100vh;background:#fff;display:flex;flex-direction:column;box-shadow:0 0 40px rgba(0,0,0,.08);}
+body{background:#efefef;font-family:var(--font);color:var(--text);display:flex;flex-direction:column;align-items:center;min-height:100vh;}
+.app{width:100%;max-width:470px;min-height:100vh;background:#fff;display:flex;flex-direction:column;box-shadow:0 2px 20px rgba(0,0,0,.12);border:1px solid var(--border);}
 
 /* Header */
 .top-header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;border-bottom:1px solid var(–border);background:#fff;position:sticky;top:0;z-index:60;}
@@ -40,7 +40,7 @@ body{background:var(--bg);font-family:var(--font);color:var(--text);display:flex
 .story-name{font-size:11px;color:var(–text);max-width:62px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
 /* Feed page */
-.feed-page{display:flex;flex-direction:column;padding-bottom:70px;}
+.feed-page{display:flex;flex-direction:column;padding-bottom:72px;}
 .feed-post{border-bottom:1px solid var(–border);}
 .post-header{display:flex;align-items:center;padding:10px 12px;gap:10px;}
 .post-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#c13584,#f77737);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;border:1px solid var(–border);}
@@ -88,7 +88,7 @@ body{background:var(--bg);font-family:var(--font);color:var(--text);display:flex
 .empty-btn{background:var(–blue);color:#fff;border:none;border-radius:8px;padding:11px 28px;font-family:var(–font);font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;}
 
 /* Profile page */
-.profile-page{display:flex;flex-direction:column;padding-bottom:70px;}
+.profile-page{display:flex;flex-direction:column;padding-bottom:72px;}
 .profile-section{padding:16px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(–border);}
 .profile-top{display:flex;align-items:center;gap:20px;}
 .profile-ava{width:77px;height:77px;border-radius:50%;border:1px solid var(–border);background:linear-gradient(135deg,#c13584,#f77737);display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
@@ -123,9 +123,10 @@ body{background:var(--bg);font-family:var(--font);color:var(--text);display:flex
 .grid-empty{aspect-ratio:3/4;background:#fafafa;border:1px solid #f0f0f0;}
 
 /* Bottom nav */
-.bottom-nav{position:fixed;bottom:0;width:100%;max-width:470px;height:49px;background:#fff;border-top:1px solid var(–border);display:flex;align-items:center;justify-content:space-around;z-index:60;}
-.bnav-btn{background:none;border:none;cursor:pointer;padding:8px 14px;display:flex;align-items:center;color:var(–text);}
-.bnav-fab{width:38px;height:38px;background:#000;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;color:#fff;justify-content:center;transition:transform .15s;}
+.bottom-nav svg{width:28px;height:28px;}
+.bottom-nav{position:fixed;bottom:0;width:100%;max-width:470px;height:62px;background:#fff;border-top:1.5px solid var(–border);display:flex;align-items:center;justify-content:space-around;z-index:60;}
+.bnav-btn{background:none;border:none;cursor:pointer;padding:10px 16px;display:flex;align-items:center;color:var(–text);}
+.bnav-fab{width:44px;height:44px;background:#000;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;color:#fff;justify-content:center;transition:transform .15s;}
 .bnav-fab:hover{transform:scale(1.07);}
 
 /* Edit sheet */
@@ -233,6 +234,134 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .hpg-cell.selected::after{content:‘✓’;position:absolute;inset:0;background:rgba(0,122,255,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700;}
 .hl-name-input{width:100%;border:none;border-bottom:1px solid var(–border);outline:none;font-family:var(–font);font-size:15px;padding:12px 16px;color:var(–text);}
 .hl-name-input::placeholder{color:var(–muted);}
+
+/* Crop */
+.crop-wrap{padding:16px;}
+.crop-preview-box{width:100%;aspect-ratio:1;overflow:hidden;border-radius:8px;background:#000;position:relative;border:1px solid var(–border);}
+.crop-preview-box img{width:100%;height:100%;display:block;cursor:move;}
+.crop-ratio-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.crop-ratio-btn{padding:6px 14px;border-radius:20px;border:1px solid var(–border);background:#fff;font-family:var(–font);font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;color:var(–text);}
+.crop-ratio-btn.active{background:var(–text);color:#fff;border-color:var(–text);}
+.crop-scale-row{margin-top:14px;}
+.crop-scale-label{font-size:12px;color:var(–muted);margin-bottom:6px;display:flex;justify-content:space-between;}
+
+/* Music */
+.music-wrap{padding:16px;}
+.music-search-box{display:flex;align-items:center;gap:10px;border:1px solid var(–border);border-radius:10px;padding:10px 14px;background:var(–bg);margin-bottom:14px;}
+.music-search-box input{flex:1;border:none;outline:none;font-family:var(–font);font-size:14px;color:var(–text);background:transparent;}
+.music-search-box input::placeholder{color:var(–muted);}
+.music-current{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid var(–border);background:var(–bg);margin-bottom:12px;}
+.music-disc{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1db954,#191414);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;animation:spin 4s linear infinite;animation-play-state:paused;}
+.music-disc.playing{animation-play-state:running;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.music-info{flex:1;}
+.music-title{font-size:14px;font-weight:600;color:var(–text);}
+.music-artist{font-size:12px;color:var(–muted);}
+.music-remove{background:none;border:none;cursor:pointer;color:var(–muted);font-size:18px;padding:4px;}
+.music-suggestions{display:flex;flex-direction:column;gap:2px;}
+.music-suggestion-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .15s;}
+.music-suggestion-item:hover{background:#f5f5f5;}
+.music-sug-disc{width:40px;height:40px;border-radius:6px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.music-sug-info{flex:1;}
+.music-sug-title{font-size:13px;font-weight:600;}
+.music-sug-artist{font-size:12px;color:var(–muted);}
+.music-sug-add{background:none;border:1px solid var(–border);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;cursor:pointer;color:var(–blue);font-family:var(–font);}
+
+/* Music badge on post */
+.post-music-badge{display:flex;align-items:center;gap:6px;padding:6px 12px 2px;font-size:12px;color:var(–muted);}
+.post-music-badge .music-note{font-size:13px;}
+.post-music-badge .music-label{font-weight:500;color:var(–text);}
+
+/* ── Pre-post editor (full screen, Instagram style) ── */
+.pre-editor{position:fixed;inset:0;background:#000;z-index:150;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,0,1);}
+.pre-editor.open{transform:translateY(0);}
+.pre-editor-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;flex-shrink:0;background:#000;}
+.pre-editor-header button{background:none;border:none;cursor:pointer;color:#fff;font-size:15px;font-family:var(–font);font-weight:600;padding:4px 8px;}
+.pre-editor-header .title{color:#fff;font-size:15px;font-weight:700;}
+.pre-editor-step{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:2px;}
+
+/* Photo preview area */
+.pre-photo-main{flex:1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:0;}
+.pre-photo-main img{max-width:100%;max-height:100%;object-fit:contain;transition:filter .25s,transform .2s;}
+.pre-ratio-overlay{position:absolute;inset:0;pointer-events:none;}
+
+/* Thumbnail strip */
+.pre-thumb-strip{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;scrollbar-width:none;flex-shrink:0;background:#111;}
+.pre-thumb-strip::-webkit-scrollbar{display:none;}
+.pre-thumb{width:56px;height:56px;border-radius:6px;overflow:hidden;flex-shrink:0;cursor:pointer;border:2.5px solid transparent;position:relative;}
+.pre-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.pre-thumb.active{border-color:#fff;}
+.pre-thumb-add{width:56px;height:56px;border-radius:6px;border:2px dashed rgba(255,255,255,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,.5);font-size:22px;}
+
+/* Bottom tool bar */
+.pre-tools{display:flex;border-top:1px solid rgba(255,255,255,.1);flex-shrink:0;background:#000;}
+.pre-tool-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.5);font-size:10px;gap:4px;font-family:var(–font);font-weight:500;border-bottom:2px solid transparent;transition:all .15s;}
+.pre-tool-btn.active{color:#fff;border-bottom-color:#fff;}
+.pre-tool-btn svg{display:block;}
+
+/* Tool panels */
+.pre-panel{background:#000;flex-shrink:0;max-height:200px;overflow-y:auto;scrollbar-width:none;}
+.pre-panel::-webkit-scrollbar{display:none;}
+
+/* Ratio grid */
+.ratio-grid{display:flex;gap:10px;padding:14px 16px;overflow-x:auto;scrollbar-width:none;}
+.ratio-grid::-webkit-scrollbar{display:none;}
+.ratio-item{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;flex-shrink:0;}
+.ratio-box{border:2px solid rgba(255,255,255,.3);border-radius:4px;transition:border-color .15s;display:flex;align-items:center;justify-content:center;}
+.ratio-item.active .ratio-box{border-color:#fff;}
+.ratio-label{font-size:11px;color:rgba(255,255,255,.5);font-weight:500;}
+.ratio-item.active .ratio-label{color:#fff;}
+
+/* Filter strip in editor */
+.pre-filter-strip{display:flex;gap:12px;padding:14px 16px;overflow-x:auto;scrollbar-width:none;}
+.pre-filter-strip::-webkit-scrollbar{display:none;}
+.pre-fi{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;}
+.pre-fi-thumb{width:64px;height:64px;border-radius:6px;overflow:hidden;border:2px solid transparent;}
+.pre-fi.active .pre-fi-thumb{border-color:#fff;}
+.pre-fi-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.pre-fi-name{font-size:10px;color:rgba(255,255,255,.5);}
+.pre-fi.active .pre-fi-name{color:#fff;}
+
+/* Adjust sliders in editor */
+.pre-adj-list{padding:8px 0;}
+.pre-adj-row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
+.pre-adj-ico{width:22px;text-align:center;font-size:15px;flex-shrink:0;}
+.pre-adj-right{flex:1;}
+.pre-adj-top{display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px;color:rgba(255,255,255,.7);}
+.pre-adj-v{color:#fff;font-weight:600;}
+input.pre-range{-webkit-appearance:none;width:100%;height:2px;background:rgba(255,255,255,.2);border-radius:2px;outline:none;cursor:pointer;}
+input.pre-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;cursor:pointer;}
+
+/* Caption step */
+.pre-caption-step{background:#fff;flex:1;display:flex;flex-direction:column;}
+.pre-cap-preview{width:100%;aspect-ratio:1;max-height:220px;overflow:hidden;flex-shrink:0;}
+.pre-cap-preview img{width:100%;height:100%;object-fit:cover;display:block;}
+.pre-cap-box{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px;}
+.pre-cap-textarea{width:100%;border:none;outline:none;font-family:var(–font);font-size:15px;color:#262626;resize:none;min-height:80px;line-height:1.5;}
+.pre-cap-textarea::placeholder{color:#8e8e8e;}
+.pre-cap-divider{height:1px;background:#dbdbdb;}
+.pre-music-row{display:flex;align-items:center;gap:12px;padding:4px 0;cursor:pointer;}
+.pre-music-row .music-ico{font-size:20px;}
+.pre-music-row .music-txt{font-size:14px;color:#262626;}
+.pre-music-row .music-arr{margin-left:auto;color:#8e8e8e;font-size:16px;}
+.pre-music-selected{color:#0095f6 !important;font-weight:600;}
+
+/* Music picker overlay */
+.music-picker{position:absolute;inset:0;background:#fff;z-index:10;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.32,.72,0,1);}
+.music-picker.open{transform:translateX(0);}
+.music-picker-hd{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid #dbdbdb;}
+.music-picker-hd button{background:none;border:none;cursor:pointer;font-size:22px;color:#262626;padding:2px 8px 2px 0;}
+.music-picker-hd h3{font-size:16px;font-weight:700;}
+.music-picker-search{margin:12px 16px;display:flex;align-items:center;gap:8px;border:1px solid #dbdbdb;border-radius:10px;padding:10px 14px;background:#fafafa;}
+.music-picker-search input{flex:1;border:none;outline:none;font-family:var(–font);font-size:14px;background:transparent;}
+.music-picker-list{flex:1;overflow-y:auto;}
+.mp-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f0f0;cursor:pointer;}
+.mp-item:hover{background:#fafafa;}
+.mp-disc{width:46px;height:46px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.mp-info{flex:1;}
+.mp-title{font-size:14px;font-weight:600;}
+.mp-artist{font-size:12px;color:#8e8e8e;}
+.mp-check{color:#0095f6;font-size:18px;font-weight:700;}
 .toast{position:fixed;bottom:62px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(0,0,0,.8);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:500;opacity:0;transition:all .3s;z-index:200;white-space:nowrap;pointer-events:none;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 </style>
@@ -358,7 +487,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
   <div class="stabs-row">
     <button class="stab active" data-tab="filter">필터</button>
     <button class="stab" data-tab="adjust">조정</button>
+    <button class="stab" data-tab="crop">크롭</button>
     <button class="stab" data-tab="caption">캡션</button>
+    <button class="stab" data-tab="music">음악</button>
   </div>
   <div class="sheet-body" id="sheet-body"></div>
   <button class="del-post-btn" id="btn-del-post">게시물 삭제</button>
@@ -410,7 +541,7 @@ function makeAdj() {
 }
 
 function makePhoto(src) {
-  return {id: newId(), src, filter:'none', adj: makeAdj()};
+  return {id: newId(), src, filter:'none', adj: makeAdj(), cropScale:100, cropX:0, cropY:0, cropRatio:'1:1'};
 }
 
 function makePost(photos) {
@@ -467,27 +598,12 @@ document.getElementById('file-main').addEventListener('change', function(e) {
   const files = [...this.files].filter(f => f.type.startsWith('image/')).slice(0, 20);
   if (!files.length) { this.value = ''; return; }
   readFilesAsSrcs(files, srcs => {
-    posts.unshift(makePost(srcs.map(makePhoto)));
-    renderAll();
-    showToast(files.length + '장 게시물 추가됨 ✓');
+    openPreEditor(srcs.map(makePhoto));
   });
   this.value = '';
 });
 
-document.getElementById('file-add').addEventListener('change', function(e) {
-  if (selPostIdx < 0) { this.value = ''; return; }
-  const post = posts[selPostIdx];
-  const maxAdd = 20 - post.photos.length;
-  if (maxAdd <= 0) { showToast('최대 20장까지 추가할 수 있어요'); this.value = ''; return; }
-  const files = [...this.files].filter(f => f.type.startsWith('image/')).slice(0, maxAdd);
-  readFilesAsSrcs(files, srcs => {
-    srcs.forEach(s => post.photos.push(makePhoto(s)));
-    document.getElementById('sheet-title').textContent = '게시물 편집 (' + post.photos.length + '장)';
-    renderStrip();
-    showToast('+' + files.length + '장 추가됨');
-  });
-  this.value = '';
-});
+// file-add handled in pre-editor script
 
 // ── Main render ───────────────────────────────────────
 function renderAll() {
@@ -537,7 +653,7 @@ function buildPostEl(post, pi) {
     <div class="post-avatar">👤</div>
     <div class="post-user">
       <div class="post-username">${uname}</div>
-      <div class="post-sublabel">피드 미리보기</div>
+      <div class="post-sublabel">${post.music ? '♪ ' + esc(post.music.title) + ' · ' + esc(post.music.artist) : '피드 미리보기'}</div>
     </div>`;
   const moreBtn = document.createElement('button');
   moreBtn.className = 'post-more-btn';
@@ -549,6 +665,13 @@ function buildPostEl(post, pi) {
   // Carousel
   const carWrap = document.createElement('div');
   carWrap.className = 'carousel-wrap';
+  // Apply crop ratio of cover photo
+  const coverPh = post.photos[0];
+  if (coverPh && coverPh.cropRatio) {
+    if (coverPh.cropRatio === '4:5') carWrap.style.aspectRatio = '4/5';
+    else if (coverPh.cropRatio === '9:16') carWrap.style.aspectRatio = '9/16';
+    else if (coverPh.cropRatio === 'orig') carWrap.style.aspectRatio = 'auto';
+  }
 
   const track = document.createElement('div');
   track.className = 'carousel-track';
@@ -559,6 +682,10 @@ function buildPostEl(post, pi) {
     const img = document.createElement('img');
     img.src = ph.src;
     img.style.filter = cssFilter(ph);
+    if (ph.cropScale && ph.cropScale !== 100) {
+      img.style.transform = `scale(${ph.cropScale/100}) translate(${ph.cropX||0}px,${ph.cropY||0}px)`;
+      img.style.transformOrigin = 'center';
+    }
     slideEl.appendChild(img);
     track.appendChild(slideEl);
   });
@@ -1073,6 +1200,164 @@ function renderSheetBody() {
     });
     body.appendChild(list);
 
+  } else if (sheetTab === 'crop') {
+    const post2 = posts[selPostIdx];
+    const ph2 = post2.photos[selPhotoIdx];
+    const cropWrap = document.createElement('div');
+    cropWrap.className = 'crop-wrap';
+
+    // Preview
+    const previewBox = document.createElement('div');
+    previewBox.className = 'crop-preview-box';
+    // apply ratio
+    const ratioMap = {'1:1':'aspect-ratio:1','4:5':'aspect-ratio:4/5','9:16':'aspect-ratio:9/16','原创':'aspect-ratio:auto'};
+    if (ph2.cropRatio === '4:5') previewBox.style.aspectRatio = '4/5';
+    else if (ph2.cropRatio === '9:16') previewBox.style.aspectRatio = '9/16';
+    else if (ph2.cropRatio === 'orig') previewBox.style.aspectRatio = 'auto';
+    else previewBox.style.aspectRatio = '1';
+
+    const prevImg = document.createElement('img');
+    prevImg.src = ph2.src;
+    prevImg.style.filter = cssFilter(ph2);
+    const sc = ph2.cropScale || 100;
+    prevImg.style.transform = `scale(${sc/100}) translate(${ph2.cropX||0}px, ${ph2.cropY||0}px)`;
+    prevImg.style.transformOrigin = 'center';
+    prevImg.style.transition = 'transform .15s';
+
+    // drag to pan
+    let px=0,py=0,dragging=false;
+    prevImg.addEventListener('mousedown', e=>{dragging=true;px=e.clientX;py=e.clientY;});
+    window.addEventListener('mouseup', ()=>dragging=false);
+    window.addEventListener('mousemove', e=>{
+      if(!dragging) return;
+      ph2.cropX=(ph2.cropX||0)+(e.clientX-px); ph2.cropY=(ph2.cropY||0)+(e.clientY-py);
+      px=e.clientX;py=e.clientY;
+      prevImg.style.transform=`scale(${(ph2.cropScale||100)/100}) translate(${ph2.cropX}px,${ph2.cropY}px)`;
+    });
+    prevImg.addEventListener('touchstart',e=>{dragging=true;px=e.touches[0].clientX;py=e.touches[0].clientY;},{passive:true});
+    prevImg.addEventListener('touchend',()=>dragging=false,{passive:true});
+    prevImg.addEventListener('touchmove',e=>{
+      if(!dragging) return;
+      ph2.cropX=(ph2.cropX||0)+(e.touches[0].clientX-px); ph2.cropY=(ph2.cropY||0)+(e.touches[0].clientY-py);
+      px=e.touches[0].clientX;py=e.touches[0].clientY;
+      prevImg.style.transform=`scale(${(ph2.cropScale||100)/100}) translate(${ph2.cropX}px,${ph2.cropY}px)`;
+    },{passive:true});
+
+    previewBox.appendChild(prevImg);
+    cropWrap.appendChild(previewBox);
+
+    // Ratio buttons
+    const ratioRow = document.createElement('div');
+    ratioRow.className = 'crop-ratio-row';
+    [['1:1','정사각형'],['4:5','세로'],['9:16','스토리'],['orig','원본']].forEach(([r,label])=>{
+      const btn = document.createElement('button');
+      btn.className = 'crop-ratio-btn' + (ph2.cropRatio===r?' active':'');
+      btn.textContent = label;
+      btn.addEventListener('click',()=>{
+        ph2.cropRatio=r; ph2.cropX=0; ph2.cropY=0;
+        renderSheetBody();
+      });
+      ratioRow.appendChild(btn);
+    });
+    cropWrap.appendChild(ratioRow);
+
+    // Scale slider
+    const scaleRow = document.createElement('div');
+    scaleRow.className = 'crop-scale-row';
+    const scaleLabel = document.createElement('div');
+    scaleLabel.className = 'crop-scale-label';
+    const scaleValSpan = document.createElement('span');
+    scaleValSpan.textContent = (ph2.cropScale||100) + '%';
+    scaleLabel.innerHTML = '<span>확대/축소</span>';
+    scaleLabel.appendChild(scaleValSpan);
+    const scaleSlider = document.createElement('input');
+    scaleSlider.type='range'; scaleSlider.min=100; scaleSlider.max=300; scaleSlider.value=ph2.cropScale||100;
+    scaleSlider.addEventListener('input',()=>{
+      ph2.cropScale=+scaleSlider.value;
+      scaleValSpan.textContent=scaleSlider.value+'%';
+      prevImg.style.transform=`scale(${ph2.cropScale/100}) translate(${ph2.cropX||0}px,${ph2.cropY||0}px)`;
+    });
+    scaleRow.appendChild(scaleLabel);
+    scaleRow.appendChild(scaleSlider);
+    cropWrap.appendChild(scaleRow);
+
+    body.appendChild(cropWrap);
+
+  } else if (sheetTab === 'music') {
+    const post3 = posts[selPostIdx];
+    const musicWrap = document.createElement('div');
+    musicWrap.className = 'music-wrap';
+
+    // Current music
+    if (post3.music) {
+      const cur = document.createElement('div');
+      cur.className = 'music-current';
+      const disc = document.createElement('div');
+      disc.className = 'music-disc playing';
+      disc.textContent = '🎵';
+      const info = document.createElement('div');
+      info.className = 'music-info';
+      info.innerHTML = '<div class="music-title">'+esc(post3.music.title)+'</div><div class="music-artist">'+esc(post3.music.artist)+'</div>';
+      const rmBtn = document.createElement('button');
+      rmBtn.className = 'music-remove';
+      rmBtn.textContent = '×';
+      rmBtn.addEventListener('click',()=>{ post3.music=null; renderSheetBody(); });
+      cur.appendChild(disc); cur.appendChild(info); cur.appendChild(rmBtn);
+      musicWrap.appendChild(cur);
+    }
+
+    // Search
+    const searchBox = document.createElement('div');
+    searchBox.className = 'music-search-box';
+    searchBox.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+    const searchInput = document.createElement('input');
+    searchInput.placeholder = '노래 제목, 아티스트 검색...';
+    searchInput.value = post3.music ? post3.music.title : '';
+    searchBox.appendChild(searchInput);
+    musicWrap.appendChild(searchBox);
+
+    const SONGS = [
+      {title:'YOUNG DRUG',artist:'CIFIKA',emoji:'🎸'},
+      {title:'Messy P',artist:'grgr_playlist',emoji:'🎺'},
+      {title:'제주도의 푸른 밤',artist:'태연',emoji:'🌊'},
+      {title:'밤양갱',artist:'비비 (BIBI)',emoji:'🌙'},
+      {title:'Supernova',artist:'에스파 (aespa)',emoji:'⭐'},
+      {title:'Magnetic',artist:'ILLIT',emoji:'💫'},
+      {title:'Love wins all',artist:'아이유 (IU)',emoji:'💛'},
+      {title:'Greedy',artist:'Ariana Grande',emoji:'🎀'},
+    ];
+
+    function renderSuggestions(query) {
+      sugList.innerHTML='';
+      const filtered = query ? SONGS.filter(s=>s.title.toLowerCase().includes(query.toLowerCase())||s.artist.toLowerCase().includes(query.toLowerCase())) : SONGS;
+      filtered.forEach(song=>{
+        const item = document.createElement('div');
+        item.className = 'music-suggestion-item';
+        const disc2 = document.createElement('div');
+        disc2.className = 'music-sug-disc';
+        disc2.textContent = song.emoji;
+        const info2 = document.createElement('div');
+        info2.className = 'music-sug-info';
+        info2.innerHTML = '<div class="music-sug-title">'+esc(song.title)+'</div><div class="music-sug-artist">'+esc(song.artist)+'</div>';
+        const addBtn2 = document.createElement('button');
+        addBtn2.className = 'music-sug-add';
+        addBtn2.textContent = post3.music && post3.music.title===song.title ? '✓' : '추가';
+        addBtn2.addEventListener('click',()=>{
+          post3.music = {title:song.title, artist:song.artist, emoji:song.emoji};
+          renderSheetBody();
+        });
+        item.appendChild(disc2); item.appendChild(info2); item.appendChild(addBtn2);
+        sugList.appendChild(item);
+      });
+    }
+
+    const sugList = document.createElement('div');
+    sugList.className = 'music-suggestions';
+    searchInput.addEventListener('input',()=>renderSuggestions(searchInput.value));
+    musicWrap.appendChild(sugList);
+    renderSuggestions('');
+    body.appendChild(musicWrap);
+
   } else { // caption
     const area = document.createElement('div');
     area.className = 'cap-area';
@@ -1433,6 +1718,466 @@ document.getElementById('hl-sheet-done').addEventListener('click', saveHlEdit);
 document.getElementById('hl-overlay').addEventListener('click', closeHlEdit);
 
 renderHighlights();
+</script>
+
+<!-- ── Pre-post Editor ── -->
+
+<div class="pre-editor" id="pre-editor">
+  <div id="pre-step-edit" style="display:flex;flex-direction:column;flex:1;min-height:0;">
+    <div class="pre-editor-header">
+      <button id="pre-cancel">취소</button>
+      <div>
+        <div class="title">새 게시물</div>
+        <div class="pre-editor-step" id="pre-step-label">편집</div>
+      </div>
+      <button id="pre-next-btn" style="color:#0095f6;">다음 →</button>
+    </div>
+    <div class="pre-photo-main" id="pre-photo-main">
+      <img id="pre-main-img" src="" alt="">
+    </div>
+    <div class="pre-thumb-strip" id="pre-thumb-strip"></div>
+    <div class="pre-tools">
+      <button class="pre-tool-btn active" data-tool="crop" id="pre-tool-crop">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 2 6 18 22 18"/><polyline points="2 6 18 6"/></svg>
+        비율
+      </button>
+      <button class="pre-tool-btn" data-tool="filter" id="pre-tool-filter">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        필터
+      </button>
+      <button class="pre-tool-btn" data-tool="music" id="pre-tool-music">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        음악
+      </button>
+    </div>
+    <div class="pre-panel" id="pre-panel"></div>
+    <div style="background:#111;border-top:1px solid rgba(255,255,255,.1);padding:10px 14px;flex-shrink:0;display:flex;align-items:center;gap:8px;">
+      <textarea id="pre-inline-caption" placeholder="문구 입력..." style="flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:var(--font);font-size:13px;resize:none;height:36px;line-height:1.5;" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Caption step -->
+
+  <div class="pre-caption-step" id="pre-step-caption" style="display:none;position:relative;">
+    <div class="pre-editor-header" style="background:#fff;border-bottom:1px solid #dbdbdb;">
+      <button id="pre-back-btn" style="color:#262626;">← 뒤로</button>
+      <div class="title" style="color:#262626;">캡션 작성</div>
+      <button id="pre-share-btn" style="color:#0095f6;">공유</button>
+    </div>
+    <div class="pre-cap-preview"><img id="pre-cap-img" src="" alt=""></div>
+    <div class="pre-cap-box">
+      <textarea class="pre-cap-textarea" id="pre-cap-textarea" placeholder="문구를 작성하거나 설문, 이벤트 등을 추가하세요..."></textarea>
+      <div class="pre-cap-divider"></div>
+      <div class="pre-music-row" id="pre-music-row">
+        <span class="music-ico">🎵</span>
+        <span class="music-txt" id="pre-music-label">음악 추가</span>
+        <span class="music-arr">›</span>
+      </div>
+      <div class="pre-cap-divider"></div>
+    </div>
+
+```
+<!-- Music picker (slides in from right) -->
+<div class="music-picker" id="music-picker">
+  <div class="music-picker-hd">
+    <button id="music-picker-back">×</button>
+    <h3>음악 선택</h3>
+  </div>
+  <div class="music-picker-search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8e8e8e" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="music-picker-input" placeholder="노래 제목, 아티스트 검색...">
+  </div>
+  <div class="music-picker-list" id="music-picker-list"></div>
+</div>
+```
+
+  </div>
+</div>
+
+<script>
+// ── Pre-post Editor ──────────────────────────────────
+const SONGS = [
+  {title:'YOUNG DRUG',      artist:'CIFIKA',         emoji:'🎸', bg:'linear-gradient(135deg,#667eea,#764ba2)'},
+  {title:'Messy P',         artist:'grgr_playlist',  emoji:'🎺', bg:'linear-gradient(135deg,#f093fb,#f5576c)'},
+  {title:'제주도의 푸른 밤',  artist:'태연',            emoji:'🌊', bg:'linear-gradient(135deg,#4facfe,#00f2fe)'},
+  {title:'밤양갱',           artist:'비비 (BIBI)',     emoji:'🌙', bg:'linear-gradient(135deg,#43e97b,#38f9d7)'},
+  {title:'Supernova',       artist:'에스파 (aespa)',   emoji:'⭐', bg:'linear-gradient(135deg,#fa709a,#fee140)'},
+  {title:'Magnetic',        artist:'ILLIT',           emoji:'💫', bg:'linear-gradient(135deg,#a18cd1,#fbc2eb)'},
+  {title:'Love wins all',   artist:'아이유 (IU)',      emoji:'💛', bg:'linear-gradient(135deg,#fda085,#f6d365)'},
+  {title:'Greedy',          artist:'Ariana Grande',   emoji:'🎀', bg:'linear-gradient(135deg,#f77062,#fe5196)'},
+  {title:'Espresso',        artist:'Sabrina Carpenter',emoji:'☕', bg:'linear-gradient(135deg,#c2885b,#6f4e37)'},
+  {title:'Birds of a Feather',artist:'Billie Eilish', emoji:'🐦', bg:'linear-gradient(135deg,#96fbc4,#f9f586)'},
+];
+
+const RATIOS = [
+  {id:'orig',  label:'원본',      w:56, h:44},
+  {id:'1:1',   label:'1:1',       w:52, h:52},
+  {id:'4:5',   label:'4:5',       w:44, h:55},
+  {id:'9:16',  label:'9:16',      w:36, h:64},
+  {id:'16:9',  label:'16:9',      w:64, h:36},
+  {id:'3:4',   label:'3:4',       w:44, h:58},
+  {id:'2:3',   label:'2:3',       w:40, h:60},
+];
+
+let prePhotos = [];       // temp photos being edited
+let preSelIdx = 0;        // which photo is selected
+let preTool = 'crop';     // active tool
+let preCaption = '';
+let preMusic = null;
+
+function openPreEditor(photos) {
+  prePhotos = photos;
+  preSelIdx = 0;
+  preTool = 'crop';
+  preCaption = '';
+  preMusic = null;
+
+  document.getElementById('pre-step-edit').style.display = 'flex';
+  document.getElementById('pre-step-caption').style.display = 'none';
+  document.getElementById('pre-editor').classList.add('open');
+  document.getElementById('pre-step-label').textContent = '편집';
+
+  renderPreThumbStrip();
+  renderPreMainPhoto();
+  renderPrePanel();
+}
+
+function closePreEditor() {
+  document.getElementById('pre-editor').classList.remove('open');
+  prePhotos = [];
+}
+
+function renderPreMainPhoto() {
+  var ph = prePhotos[preSelIdx];
+  if (!ph) return;
+  var img = document.getElementById('pre-main-img');
+  img.src = ph.src;
+  img.style.filter = cssFilter(ph);
+  img.style.transform = ph.cropScale && ph.cropScale !== 100
+    ? 'scale(' + (ph.cropScale/100) + ') translate(' + (ph.cropX||0) + 'px,' + (ph.cropY||0) + 'px)'
+    : '';
+
+  // Apply ratio to the container
+  var main = document.getElementById('pre-photo-main');
+  var ratio = ph.cropRatio || '1:1';
+  var ratioMap = {'orig':'auto','1:1':'1','4:5':'4/5','9:16':'9/16','16:9':'16/9','3:4':'3/4','2:3':'2/3'};
+  main.style.aspectRatio = ratioMap[ratio] || '1';
+  main.style.maxHeight = (ratio === '9:16' || ratio === '2:3') ? '70vh' : 'none';
+}
+
+function renderPreThumbStrip() {
+  var strip = document.getElementById('pre-thumb-strip');
+  strip.innerHTML = '';
+  prePhotos.forEach(function(ph, i) {
+    var thumb = document.createElement('div');
+    thumb.className = 'pre-thumb' + (i === preSelIdx ? ' active' : '');
+    var img = document.createElement('img');
+    img.src = ph.src;
+    img.style.filter = cssFilter(ph);
+    thumb.appendChild(img);
+    thumb.addEventListener('click', function() {
+      preSelIdx = i;
+      renderPreThumbStrip();
+      renderPreMainPhoto();
+      renderPrePanel();
+    });
+    strip.appendChild(thumb);
+  });
+  // Add more button
+  var addBtn = document.createElement('div');
+  addBtn.className = 'pre-thumb-add';
+  addBtn.textContent = '+';
+  addBtn.title = '사진 추가';
+  addBtn.addEventListener('click', function() { document.getElementById('file-add').click(); });
+  strip.appendChild(addBtn);
+}
+
+function renderPrePanel() {
+  var ph = prePhotos[preSelIdx];
+  if (!ph) return;
+  var panel = document.getElementById('pre-panel');
+  panel.innerHTML = '';
+
+  // Highlight active tool
+  document.querySelectorAll('.pre-tool-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tool === preTool);
+  });
+
+  if (preTool === 'crop') {
+    var ratioGrid = document.createElement('div');
+    ratioGrid.className = 'ratio-grid';
+    RATIOS.forEach(function(r) {
+      var item = document.createElement('div');
+      item.className = 'ratio-item' + ((ph.cropRatio || '1:1') === r.id ? ' active' : '');
+      var box = document.createElement('div');
+      box.className = 'ratio-box';
+      box.style.width = r.w + 'px';
+      box.style.height = r.h + 'px';
+      var label = document.createElement('div');
+      label.className = 'ratio-label';
+      label.textContent = r.label;
+      item.appendChild(box);
+      item.appendChild(label);
+      item.addEventListener('click', function() {
+        ph.cropRatio = r.id;
+        ph.cropX = 0; ph.cropY = 0;
+        renderPrePanel();
+        renderPreMainPhoto();
+        renderPreThumbStrip();
+      });
+      ratioGrid.appendChild(item);
+    });
+    panel.appendChild(ratioGrid);
+
+    // Scale slider
+    var scaleWrap = document.createElement('div');
+    scaleWrap.style.padding = '8px 16px 14px';
+    var scaleTop = document.createElement('div');
+    scaleTop.style.cssText = 'display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.6);margin-bottom:6px;';
+    var scaleVal = document.createElement('span');
+    scaleVal.textContent = (ph.cropScale || 100) + '%';
+    scaleTop.innerHTML = '<span>확대/축소</span>';
+    scaleTop.appendChild(scaleVal);
+    var scaleSlider = document.createElement('input');
+    scaleSlider.type = 'range'; scaleSlider.className = 'pre-range';
+    scaleSlider.min = 100; scaleSlider.max = 300; scaleSlider.value = ph.cropScale || 100;
+    scaleSlider.addEventListener('input', function() {
+      ph.cropScale = +this.value;
+      scaleVal.textContent = this.value + '%';
+      renderPreMainPhoto();
+    });
+    scaleWrap.appendChild(scaleTop);
+    scaleWrap.appendChild(scaleSlider);
+    panel.appendChild(scaleWrap);
+
+  } else if (preTool === 'filter') {
+    var strip2 = document.createElement('div');
+    strip2.className = 'pre-filter-strip';
+    FILTERS.forEach(function(f) {
+      var fi = document.createElement('div');
+      fi.className = 'pre-fi' + (ph.filter === f.css ? ' active' : '');
+      var thumb2 = document.createElement('div');
+      thumb2.className = 'pre-fi-thumb';
+      var img2 = document.createElement('img');
+      img2.src = ph.src;
+      img2.style.filter = f.css === 'none' ? 'none' : f.css;
+      thumb2.appendChild(img2);
+      var name2 = document.createElement('div');
+      name2.className = 'pre-fi-name';
+      name2.textContent = f.name;
+      fi.appendChild(thumb2); fi.appendChild(name2);
+      fi.addEventListener('click', function() {
+        ph.filter = f.css;
+        renderPrePanel();
+        renderPreMainPhoto();
+        renderPreThumbStrip();
+      });
+      strip2.appendChild(fi);
+    });
+    panel.appendChild(strip2);
+
+  } else if (preTool === 'music') {
+    var musicWrap2 = document.createElement('div');
+    musicWrap2.style.cssText = 'padding:12px 16px;';
+
+    // Current music banner
+    if (preMusic) {
+      var curBanner = document.createElement('div');
+      curBanner.style.cssText = 'display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;margin-bottom:10px;';
+      var discCur = document.createElement('div');
+      discCur.style.cssText = 'width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;background:rgba(255,255,255,.15);flex-shrink:0;';
+      discCur.textContent = preMusic.emoji;
+      var infoCur = document.createElement('div');
+      infoCur.style.flex = '1';
+      infoCur.innerHTML = '<div style="color:#fff;font-size:13px;font-weight:600;">' + esc(preMusic.title) + '</div><div style="color:rgba(255,255,255,.5);font-size:11px;">' + esc(preMusic.artist) + '</div>';
+      var rmCur = document.createElement('button');
+      rmCur.style.cssText = 'background:none;border:none;color:rgba(255,255,255,.5);font-size:18px;cursor:pointer;padding:0 4px;';
+      rmCur.textContent = '×';
+      rmCur.addEventListener('click', function() { preMusic = null; renderPrePanel(); });
+      curBanner.appendChild(discCur); curBanner.appendChild(infoCur); curBanner.appendChild(rmCur);
+      musicWrap2.appendChild(curBanner);
+    }
+
+    // Search
+    var searchWrap = document.createElement('div');
+    searchWrap.style.cssText = 'display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border-radius:10px;padding:8px 12px;margin-bottom:10px;';
+    searchWrap.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+    var searchIn = document.createElement('input');
+    searchIn.placeholder = '노래 검색...';
+    searchIn.style.cssText = 'flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:var(--font);font-size:13px;';
+    searchWrap.appendChild(searchIn);
+    musicWrap2.appendChild(searchWrap);
+
+    var songList = document.createElement('div');
+    musicWrap2.appendChild(songList);
+
+    function renderSongList(q) {
+      songList.innerHTML = '';
+      var filtered = q ? SONGS.filter(function(s) {
+        return s.title.toLowerCase().includes(q.toLowerCase()) || s.artist.toLowerCase().includes(q.toLowerCase());
+      }) : SONGS;
+      filtered.forEach(function(song) {
+        var item2 = document.createElement('div');
+        item2.style.cssText = 'display:flex;align-items:center;gap:10px;padding:8px 0;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);';
+        var disc2 = document.createElement('div');
+        disc2.style.cssText = 'width:38px;height:38px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;';
+        disc2.style.background = song.bg;
+        disc2.textContent = song.emoji;
+        var info2 = document.createElement('div');
+        info2.style.flex = '1';
+        info2.innerHTML = '<div style="color:#fff;font-size:13px;font-weight:600;">' + esc(song.title) + '</div><div style="color:rgba(255,255,255,.5);font-size:11px;">' + esc(song.artist) + '</div>';
+        var sel2 = document.createElement('div');
+        sel2.style.cssText = 'color:#0095f6;font-size:16px;font-weight:700;width:20px;text-align:center;';
+        sel2.textContent = preMusic && preMusic.title === song.title ? '✓' : '';
+        item2.appendChild(disc2); item2.appendChild(info2); item2.appendChild(sel2);
+        item2.addEventListener('click', function() {
+          preMusic = {title:song.title, artist:song.artist, emoji:song.emoji};
+          renderPrePanel();
+        });
+        songList.appendChild(item2);
+      });
+    }
+
+    searchIn.addEventListener('input', function() { renderSongList(this.value); });
+    renderSongList('');
+    panel.appendChild(musicWrap2);
+  }
+}
+
+// ── Tool button switching ─────────────────────────────
+document.querySelectorAll('.pre-tool-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    preTool = this.dataset.tool;
+    renderPrePanel();
+  });
+});
+
+// ── Next → Caption step ───────────────────────────────
+document.getElementById('pre-inline-caption').addEventListener('input', function() {
+  preCaption = this.value;
+  var capArea = document.getElementById('pre-cap-textarea');
+  if (capArea) capArea.value = preCaption;
+});
+
+document.getElementById('pre-next-btn').addEventListener('click', function() {
+  preCaption = document.getElementById('pre-inline-caption').value;
+  document.getElementById('pre-step-edit').style.display = 'none';
+  document.getElementById('pre-step-caption').style.display = 'flex';
+  document.getElementById('pre-step-caption').style.flexDirection = 'column';
+  document.getElementById('pre-step-label').textContent = '캡션';
+  // Show cover photo
+  var cover = prePhotos[0];
+  var capImg = document.getElementById('pre-cap-img');
+  capImg.src = cover.src;
+  capImg.style.filter = cssFilter(cover);
+  document.getElementById('pre-cap-textarea').value = preCaption;
+  updateMusicLabel();
+});
+
+// ── Back ──────────────────────────────────────────────
+document.getElementById('pre-back-btn').addEventListener('click', function() {
+  document.getElementById('pre-step-edit').style.display = 'flex';
+  document.getElementById('pre-step-caption').style.display = 'none';
+});
+
+// ── Cancel ────────────────────────────────────────────
+document.getElementById('pre-cancel').addEventListener('click', closePreEditor);
+
+// ── Caption textarea ──────────────────────────────────
+document.getElementById('pre-cap-textarea').addEventListener('input', function() {
+  preCaption = this.value;
+});
+
+// ── Share → add to feed ───────────────────────────────
+document.getElementById('pre-share-btn').addEventListener('click', function() {
+  var newPost = makePost(prePhotos);
+  newPost.caption = preCaption;
+  newPost.music = preMusic;
+  posts.unshift(newPost);
+  renderAll();
+  closePreEditor();
+  showToast(prePhotos.length + '장 게시물 업로드됨 ✓');
+  preCaption = '';
+  preMusic = null;
+});
+
+// ── Music picker ──────────────────────────────────────
+function updateMusicLabel() {
+  var label = document.getElementById('pre-music-label');
+  if (preMusic) {
+    label.textContent = preMusic.emoji + '  ' + preMusic.title + ' · ' + preMusic.artist;
+    label.classList.add('pre-music-selected');
+  } else {
+    label.textContent = '음악 추가';
+    label.classList.remove('pre-music-selected');
+  }
+}
+
+document.getElementById('pre-music-row').addEventListener('click', function() {
+  document.getElementById('music-picker').classList.add('open');
+  renderMusicPickerList('');
+});
+document.getElementById('music-picker-back').addEventListener('click', function() {
+  document.getElementById('music-picker').classList.remove('open');
+});
+document.getElementById('music-picker-input').addEventListener('input', function() {
+  renderMusicPickerList(this.value);
+});
+
+function renderMusicPickerList(query) {
+  var list = document.getElementById('music-picker-list');
+  list.innerHTML = '';
+  var filtered = query
+    ? SONGS.filter(function(s) { return s.title.toLowerCase().includes(query.toLowerCase()) || s.artist.toLowerCase().includes(query.toLowerCase()); })
+    : SONGS;
+  filtered.forEach(function(song) {
+    var item = document.createElement('div');
+    item.className = 'mp-item';
+    var disc = document.createElement('div');
+    disc.className = 'mp-disc';
+    disc.style.background = song.bg;
+    disc.textContent = song.emoji;
+    var info = document.createElement('div');
+    info.className = 'mp-info';
+    info.innerHTML = '<div class="mp-title">' + esc(song.title) + '</div><div class="mp-artist">' + esc(song.artist) + '</div>';
+    var check = document.createElement('div');
+    check.className = 'mp-check';
+    check.textContent = preMusic && preMusic.title === song.title ? '✓' : '';
+    item.appendChild(disc); item.appendChild(info); item.appendChild(check);
+    item.addEventListener('click', function() {
+      preMusic = {title: song.title, artist: song.artist, emoji: song.emoji};
+      document.getElementById('music-picker').classList.remove('open');
+      updateMusicLabel();
+    });
+    list.appendChild(item);
+  });
+}
+
+// file-add during pre-editor
+document.getElementById('file-add').addEventListener('change', function(e) {
+  // If pre-editor is open, add to prePhotos
+  if (document.getElementById('pre-editor').classList.contains('open')) {
+    var files = [...this.files].filter(function(f) { return f.type.startsWith('image/'); }).slice(0, 20 - prePhotos.length);
+    readFilesAsSrcs(files, function(srcs) {
+      srcs.forEach(function(s) { prePhotos.push(makePhoto(s)); });
+      renderPreThumbStrip();
+    });
+    this.value = ''; return;
+  }
+  // Otherwise existing sheet logic
+  if (selPostIdx < 0) { this.value = ''; return; }
+  var post2 = posts[selPostIdx];
+  var maxAdd = 20 - post2.photos.length;
+  if (maxAdd <= 0) { showToast('최대 20장까지 추가할 수 있어요'); this.value = ''; return; }
+  var files2 = [...this.files].filter(function(f) { return f.type.startsWith('image/'); }).slice(0, maxAdd);
+  readFilesAsSrcs(files2, function(srcs) {
+    srcs.forEach(function(s) { post2.photos.push(makePhoto(s)); });
+    document.getElementById('sheet-title').textContent = '게시물 편집 (' + post2.photos.length + '장)';
+    renderStrip();
+    showToast('+' + files2.length + '장 추가됨');
+  });
+  this.value = '';
+});
 </script>
 
 </body>

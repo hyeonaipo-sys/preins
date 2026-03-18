@@ -19,13 +19,13 @@ body{background:#e0e0e0;font-family:var(--font);color:var(--text);display:flex;f
 .app{width:100%;max-width:470px;min-height:100vh;background:#fff;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,0,0,.18);border:1.5px solid #aaa;}
 
 /* Header */
-.top-header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;border-bottom:2px solid #b2b2b2;background:#fff;position:sticky;top:0;z-index:60;}
+.top-header{display:none;align-items:center;justify-content:space-between;padding:0 16px;height:44px;border-bottom:2px solid #b2b2b2;background:#fff;position:sticky;top:0;z-index:60;}
 .ig-logo{font:600 20px/1 var(–font);letter-spacing:0;}
 .top-icons{display:flex;gap:16px;align-items:center;}
 .icon-btn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;color:var(–text);}
 
 /* Page tabs */
-.nav-tabs{display:flex;border-bottom:2px solid #b2b2b2;background:#fff;position:sticky;top:44px;z-index:59;}
+.nav-tabs{display:flex;border-bottom:2px solid #b2b2b2;background:#fff;position:sticky;top:0;z-index:59;}
 .nav-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:9px 0 7px;cursor:pointer;border-bottom:2px solid transparent;color:var(–muted);gap:3px;font-size:10px;font-weight:600;transition:all .15s;margin-bottom:-1px;}
 .nav-tab.active{border-bottom-color:var(–text);color:var(–text);}
 
@@ -40,7 +40,7 @@ body{background:#e0e0e0;font-family:var(--font);color:var(--text);display:flex;f
 .story-name{font-size:11px;color:var(–text);max-width:62px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
 /* Feed page */
-.feed-page{display:flex;flex-direction:column;padding-bottom:72px;}
+.feed-page{display:flex;flex-direction:column;padding-bottom:90px;}
 .feed-post{border-bottom:2px solid #b2b2b2;}.feed-post+.feed-post{border-top:none;}
 .post-header{display:flex;align-items:center;padding:10px 12px;gap:10px;border-bottom:1px solid #c8c8c8;}
 .post-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#c13584,#f77737);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;border:1px solid var(–border);}
@@ -88,7 +88,7 @@ body{background:#e0e0e0;font-family:var(--font);color:var(--text);display:flex;f
 .empty-btn{background:var(–blue);color:#fff;border:none;border-radius:8px;padding:11px 28px;font-family:var(–font);font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;}
 
 /* Profile page */
-.profile-page{display:flex;flex-direction:column;padding-bottom:72px;}
+.profile-page{display:flex;flex-direction:column;padding-bottom:90px;}
 .profile-section{padding:16px;display:flex;flex-direction:column;gap:14px;border-bottom:2px solid #b2b2b2;}
 .profile-top{display:flex;align-items:center;gap:20px;}
 .profile-ava{width:77px;height:77px;border-radius:50%;border:1px solid var(–border);background:linear-gradient(135deg,#c13584,#f77737);display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;}
@@ -123,10 +123,10 @@ body{background:#e0e0e0;font-family:var(--font);color:var(--text);display:flex;f
 .grid-empty{aspect-ratio:3/4;background:#fafafa;border:1px solid #f0f0f0;}
 
 /* Bottom nav */
-.bottom-nav svg{width:28px;height:28px;}
-.bottom-nav{position:fixed;bottom:0;width:100%;max-width:470px;height:62px;background:#fff;border-top:2px solid #b2b2b2;display:flex;align-items:center;justify-content:space-around;z-index:60;}
+.bottom-nav svg{width:30px;height:30px;}
+.bottom-nav{position:fixed;bottom:0;width:100%;max-width:470px;height:80px;background:#fff;border-top:2px solid #b2b2b2;display:flex;align-items:center;justify-content:space-around;z-index:60;}
 .bnav-btn{background:none;border:none;cursor:pointer;padding:10px 16px;display:flex;align-items:center;color:var(–text);}
-.bnav-fab{width:44px;height:44px;background:#000;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;color:#fff;justify-content:center;transition:transform .15s;}
+.bnav-fab{width:52px;height:52px;background:#000;border-radius:14px;border:none;cursor:pointer;display:flex;align-items:center;color:#fff;justify-content:center;transition:transform .15s;}
 .bnav-fab:hover{transform:scale(1.07);}
 
 /* Edit sheet */
